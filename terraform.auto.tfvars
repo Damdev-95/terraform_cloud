@@ -14,7 +14,13 @@ preferred_number_of_public_subnets = 2
 
 preferred_number_of_private_subnets = 4
 
-ami = "ami-0c4f7023847b90238"
+ami-web = "ami-0aed417e6ac980cd9"
+
+ami-nginx = "ami-0a10943fae9b3921a"
+
+ami-bastion = "ami-08f5dbc0412c3ff23"
+
+ami-sonar = "ami-0af0f15bb05f1cb0e"
 
 keypair = "douxtech"
 

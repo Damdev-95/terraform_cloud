@@ -40,9 +40,9 @@ module "SG" {
 
 module "ASG" {
   source            = "./modules/ASG"
-  ami-web           = var.ami
-  ami-bastion       = var.ami
-  ami-nginx         = var.ami
+  ami-web           = var.ami-web
+  ami-bastion       = var.ami-bastion
+  ami-nginx         = var.ami-nginx
   desired_capacity  = 1
   min_size          = 1
   max_size          = 1
@@ -80,9 +80,9 @@ module "RDS" {
 # The Module creates instances for jenkins, sonarqube abd jfrog
 module "compute" {
   source          = "./modules/compute"
-  ami-jenkins     = var.ami
-  ami-jfrog       = var.ami
-  ami-sonar       = var.ami
+  #ami-jenkins     = var.ami-jenkins
+  #ami-jfrog       = var.ami-jfrog
+  ami-sonar       = var.ami-sonar
   sg-compute      = [module.SG.ALB-sg]
   subnets-compute = module.VPC.public_subnets-1
   keypair         = var.keypair

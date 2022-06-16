@@ -1,17 +1,18 @@
 variable "subnets-compute" {
     description = "public subnetes for compute instances"
 }
-variable "ami-jenkins" {
+/* variable "ami-jenkins" {
     type = string
     description = "ami for jenkins"
 }
 variable "ami-jfrog" {
     type = string
     description = "ami for jfrog"
-}
+}*/
+
 variable "ami-sonar" {
     type = string
-    description = "ami for sonarqube"
+    description = "ami for sonarqube" 
 }
 variable "sg-compute" {
     description = "security group for compute instances"

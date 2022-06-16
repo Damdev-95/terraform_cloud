@@ -1,5 +1,5 @@
 # create instance for jenkins
-resource "aws_instance" "Jenkins" {
+#resource "aws_instance" "Jenkins" {
   ami                         = var.ami-jenkins
   instance_type               = "t2.micro"
   subnet_id                   = var.subnets-compute

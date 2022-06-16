@@ -36,7 +36,7 @@ variable "preferred_number_of_private_subnets" {
 
 variable "name" {
   type    = string
-  default = "Project_16"
+  default = "Project_18"
 
 }
 

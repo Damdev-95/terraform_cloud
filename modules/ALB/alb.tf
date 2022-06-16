@@ -3,16 +3,11 @@
 #---------------------------------
 
 resource "aws_lb" "ext-alb" {
-  name     = "ext-alb"
+  name     = var.name
   internal = false
-  security_groups = [
-    aws_security_group.ext-alb-sg.id,
-  ]
-
-  subnets = [
-    aws_subnet.public[0].id,
-    aws_subnet.public[1].id
-  ]
+  security_groups = [var.public-sg]
+  subnets = [var.public-sbn-1, var.public-sbn-2]
+  
 
   tags = merge(
     var.tags,
@@ -21,8 +16,8 @@ resource "aws_lb" "ext-alb" {
     },
   )
 
-  ip_address_type    = "ipv4"
-  load_balancer_type = "application"
+  ip_address_type    = var.ip_address_type
+  load_balancer_type = var.load_balancer_type
 }
 
 #--- create a target group for the external load balancer
@@ -39,7 +34,7 @@ resource "aws_lb_target_group" "nginx-tgt" {
   port        = 443
   protocol    = "HTTPS"
   target_type = "instance"
-  vpc_id      = aws_vpc.project_16.id
+  vpc_id      = var.vpc_id
 }
 
 #--- create a listener for the load balancer
@@ -63,16 +58,10 @@ resource "aws_lb_listener" "nginx-listner" {
 #---------------------------------
 
 resource "aws_lb" "ialb" {
-  name     = "ialb"
+  name     = var.name
   internal = true
-  security_groups = [
-    aws_security_group.int-alb-sg.id,
-  ]
-
-  subnets = [
-    aws_subnet.private[0].id,
-    aws_subnet.private[1].id
-  ]
+  security_groups = [var.private-sg]
+  subnets = [var.private-sbn-1, var.private-sbn-2]
 
   tags = merge(
     var.tags,
@@ -102,7 +91,7 @@ resource "aws_lb_target_group" "wordpress-tgt" {
   port        = 443
   protocol    = "HTTPS"
   target_type = "instance"
-  vpc_id      = aws_vpc.project_16.id
+  vpc_id      = var.vpc_id
 }
 
 
@@ -122,7 +111,7 @@ resource "aws_lb_target_group" "tooling-tgt" {
   port        = 443
   protocol    = "HTTPS"
   target_type = "instance"
-  vpc_id      = aws_vpc.project_16.id
+  vpc_id      = var.vpc_id
 }
 
 # For this aspect a single listener was created for the wordpress which is default,

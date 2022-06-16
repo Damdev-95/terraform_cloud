@@ -17,6 +17,7 @@ resource "aws_iam_role" "ec2_instance_role" {
     var.tags,
     {
       Name = "aws assume role"
+      Environment = var.environment
     },
   )
 }

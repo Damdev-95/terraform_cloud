@@ -1,5 +1,5 @@
 resource "aws_route_table" "private-rtb" {
-  vpc_id = aws_vpc.project_16.id
+  vpc_id = aws_vpc.project_18.id
 
   tags = merge(
     var.tags,
@@ -28,7 +28,7 @@ resource "aws_route_table_association" "private-subnets-assoc" {
 
 # create route table for the public subnets
 resource "aws_route_table" "public-rtb" {
-  vpc_id = aws_vpc.project_16.id
+  vpc_id = aws_vpc.project_18.id
 
   tags = merge(
     var.tags,

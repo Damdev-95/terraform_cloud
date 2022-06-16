@@ -1,5 +1,5 @@
 # create instance for jenkins
-#resource "aws_instance" "Jenkins" {
+/* resource "aws_instance" "Jenkins" {
   ami                         = var.ami-jenkins
   instance_type               = "t2.micro"
   subnet_id                   = var.subnets-compute
@@ -13,7 +13,7 @@
       Name = "Project18-Jenkins"
     },
   )
-}
+} */
 
 
 #create instance for sonbarqube
@@ -34,7 +34,7 @@ resource "aws_instance" "sonbarqube" {
   )
 }
 
-# create instance for artifactory
+/* # create instance for artifactory
 resource "aws_instance" "artifactory" {
   ami                         = var.ami-jfrog
   instance_type               = "t2.medium"
@@ -50,4 +50,4 @@ resource "aws_instance" "artifactory" {
       Name = "Project18-artifactory"
     },
   )
-}
+} */

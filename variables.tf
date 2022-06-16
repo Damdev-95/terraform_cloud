@@ -47,7 +47,26 @@ variable "tags" {
 }
 
 
-variable "ami" {
+variable "ami-web" {
+  type        = string
+  description = "AMI id for the launch template"
+
+}
+
+variable "ami-bastion" {
+  type        = string
+  description = "AMI id for the launch template"
+
+}
+
+variable "ami-nginx" {
+  type        = string
+  description = "AMI id for the launch template"
+
+}
+
+
+variable "ami-sonar" {
   type        = string
   description = "AMI id for the launch template"
 

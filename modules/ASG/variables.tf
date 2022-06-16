@@ -5,13 +5,13 @@ variable "ami-web" {
 
 variable "ami-bastion" {
   type        = string
-  description = "AMI id for the launch template"
+  description = "AMI id for the bastion template"
 
 }
 
 variable "ami-nginx" {
   type        = string
-  description = "AMI id for the launch template"
+  description = "AMI id for the nginx template"
 
 }
 
@@ -24,11 +24,6 @@ variable "instance_profile" {
 variable "keypair" {
   type        = string
   description = "Keypair for instances"
-}
-
-variable "ami-bastion" {
-  type        = string
-  description = "ami for bastion"
 }
 
 variable "web-sg" {
@@ -57,11 +52,6 @@ variable "public_subnets" {
   description = "Second subnet for external ALB"
 }
 
-
-variable "ami-nginx" {
-  type        = string
-  description = "ami for nginx"
-}
 
 variable "nginx-alb-tgt" {
   type        = string

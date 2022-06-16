@@ -3,6 +3,18 @@ variable "ami-web" {
   description = "ami for webservers"
 }
 
+variable "ami-bastion" {
+  type        = string
+  description = "AMI id for the launch template"
+
+}
+
+variable "ami-nginx" {
+  type        = string
+  description = "AMI id for the launch template"
+
+}
+
 variable "instance_profile" {
   type        = string
   description = "Instance profile for launch template"

@@ -39,6 +39,11 @@ variable "name" {
   default = "Project_18"
 
 }
+variable "int-name" {
+  type    = string
+  default = "PRJ18"
+}
+
 
 variable "tags" {
   description = "A mapping of tags to assign to all resources."

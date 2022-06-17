@@ -9,7 +9,7 @@ resource "aws_kms_key" "douxtech-kms" {
     {
       "Sid": "Enable IAM User Permissions",
       "Effect": "Allow",
-      "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/IAMadmin" },
+      "Principal": { "AWS": "arn:aws:iam::014285054687:user/IAMadmin" },
       "Action": "kms:*",
       "Resource": "*"
     }

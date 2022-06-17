@@ -50,6 +50,12 @@ variable "tags" {
 
 variable "name" {
     type = string
-    description = "name of the loadbalancer"
+    description = "name of the external loadbalancer"
+  
+}
+
+variable "int-name" {
+    type = string
+    description = "name of the internal loadbalancer"
   
 }

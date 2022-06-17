@@ -20,6 +20,7 @@ module "VPC" {
 module "ALB" {
   source             = "./modules/ALB"
   name               = "Project18"
+  int-name           =  "PRJ18"
   vpc_id             = module.VPC.vpc_id
   public-sg          = module.SG.ALB-sg
   private-sg         = module.SG.IALB-sg

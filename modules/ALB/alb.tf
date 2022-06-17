@@ -58,7 +58,7 @@ resource "aws_lb_listener" "nginx-listner" {
 #---------------------------------
 
 resource "aws_lb" "ialb" {
-  name     = var.name
+  name     = var.int-name
   internal = true
   security_groups = [var.private-sg]
   subnets = [var.private-sbn-1, var.private-sbn-2]
@@ -66,7 +66,7 @@ resource "aws_lb" "ialb" {
   tags = merge(
     var.tags,
     {
-      Name = format("%s-int-alb", var.name)
+      Name = format("%s-int-alb", var.int-name)
     },
   )
 

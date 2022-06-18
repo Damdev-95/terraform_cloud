@@ -65,7 +65,7 @@ module "EFS" {
   efs-subnet-1 = module.VPC.private_subnets-1
   efs-subnet-2 = module.VPC.private_subnets-2
   efs-sg       = [module.SG.datalayer-sg]
-  account_no   = var.account_no
+  /* account_no   = var.account_no */
 
 }
 

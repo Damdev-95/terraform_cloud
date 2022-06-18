@@ -24,7 +24,7 @@ ami-sonar = "ami-0af0f15bb05f1cb0e"
 
 keypair = "douxtech"
 
-account_no = 014285054687
+/* account_no = 014285054687 */
 
 master-username = "admin"
 

@@ -12,10 +12,10 @@ variable "efs-sg" {
 
 }
 
-variable "account_no" {
+/* variable "account_no" {
   type        = number
   description = "account number for the AWS account"
-} 
+}  */
 
 
 variable "tags" {

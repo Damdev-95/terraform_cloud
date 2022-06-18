@@ -82,11 +82,11 @@ variable "keypair" {
 
 }
 
-variable "account_no" {
+/* variable "account_no" {
   type        = number
   description = "Account number of the AWS account"
 }
-
+ */
 variable "master-username" {
   type        = string
   description = "RDS Username for the Database"

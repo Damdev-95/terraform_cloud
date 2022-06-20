@@ -39,7 +39,7 @@ resource "aws_lb_target_group" "nginx-tgt" {
 
 #--- create a listener for the load balancer
 
-/* resource "aws_lb_listener" "nginx-listner" {
+resource "aws_lb_listener" "nginx-listner" {
   load_balancer_arn = aws_lb.ext-alb.arn
   port              = 443
   protocol          = "HTTPS"
@@ -50,7 +50,7 @@ resource "aws_lb_target_group" "nginx-tgt" {
     target_group_arn = aws_lb_target_group.nginx-tgt.arn
   }
 }
- */
+
 
 
 # ----------------------------
@@ -118,7 +118,7 @@ resource "aws_lb_target_group" "tooling-tgt" {
 # A rule was created to route traffic to tooling when the host header changes
 
 
-/* resource "aws_lb_listener" "web-listener" {
+resource "aws_lb_listener" "web-listener" {
   load_balancer_arn = aws_lb.ialb.arn
   port              = 443
   protocol          = "HTTPS"
@@ -130,10 +130,10 @@ resource "aws_lb_target_group" "tooling-tgt" {
     target_group_arn = aws_lb_target_group.wordpress-tgt.arn
   }
 }
- */
+
 # listener rule for tooling target
 
-/* resource "aws_lb_listener_rule" "tooling-listener" {
+resource "aws_lb_listener_rule" "tooling-listener" {
   listener_arn = aws_lb_listener.web-listener.arn
   priority     = 99
 
@@ -147,7 +147,7 @@ resource "aws_lb_target_group" "tooling-tgt" {
       values = ["tooling.douxtech.xyz"]
     }
   }
-} */
+}
 
 
 
